@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Counter from "./counte";
 import UserProfile from "./UserProfile";
 import ListItem from "./ListItem";
+import FocusInput from "./focusInput";
 function App() {
   const value = "-";
   const [userId, setUserId] = useState(0);
@@ -69,6 +70,7 @@ function App() {
       <UserProfile userId={userId} />
 
       <ListItem />
+      <FocusInput />
     </>
   );
 }
