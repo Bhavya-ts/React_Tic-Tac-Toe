@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 export default function ListItem() {
-  const list = ["Iphone", "Samsung", "One+", "Xiomi", "Realme", ""];
+  const list = ["Iphone", "Samsung", "One+", "Xiomi", "Realme", "Mi"];
 
   const [input, setInput] = useState("");
   //   const [filered, setFiltered] = useState(list);
@@ -14,7 +14,7 @@ export default function ListItem() {
     return list.filter((item) =>
       item.toLowerCase().includes(input.toLowerCase())
     );
-  });
+  }, [list, input]);
 
   return (
     <>

@@ -6,11 +6,18 @@ const FocusInput = () => {
   const [lastNAme, setLastName] = useState("");
 
   const handleButtonClick = () => {
+    if (!firstNAme && !lastNAme) {
+      inputRef.current[0].focus();
+      inputRef.current[1].focus();
+      return;
+    }
     if (!firstNAme) {
       inputRef.current[0].focus();
+      return;
     }
     if (!lastNAme) {
       inputRef.current[1].focus();
+      return;
     }
   };
 
