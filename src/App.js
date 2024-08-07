@@ -1,36 +1,17 @@
 import userEvent from "@testing-library/user-event";
 import React, { useState } from "react";
-
+import Counter from "./counte";
+import UserProfile from "./UserProfile";
 function App() {
   const value = "-";
+  const [userId, setUserId] = useState(0);
+  const [showUSer, setShowUser] = useState(false);
   const [sign, setSign] = useState(true);
   const [metrix, setMetrix] = useState([
     ["-", "-", "-"],
     ["-", "-", "-"],
     ["-", "-", "-"],
   ]);
-  function winLogic(col, row, sign, co) {
-    let count = 0;
-
-    // if (count == 4 || row == -1 || col == -1 || row == 3 || col == 3) {
-    //   return;
-    // }
-    // if (count == 3 && metrix[row][col] == sign) {
-    //   console.log("we have a winner ...", sign);
-    //   return;
-    // }
-    // if (metrix[row][col] == sign) {
-    //   winLogic(col - 1, row, sign, count++);
-    //   winLogic(col + 1, row, sign, count++);
-    //   winLogic(col, row - 1, sign, count++);
-    //   winLogic(col, row + 1, sign, count++);
-    //   winLogic(col - 1, row - 1, sign, count++);
-    //   winLogic(col - 1, row + 1, sign, count++);
-    //   winLogic(col + 1, row - 1, sign, count++);
-    //   winLogic(col + 1, row + 1, sign, count++);
-    // }
-    return;
-  }
   function onClickHandler(row, col) {
     console.log("called");
     let copy = [...metrix];
@@ -39,17 +20,11 @@ function App() {
     }
     if (sign == true) {
       copy[row][col] = "O";
-      //   winLogic(col, row, "O", 1);
     } else {
       copy[row][col] = "X";
-      //   winLogic(col, row, "X", 1);
     }
-    //
     setMetrix(copy);
-
     setSign(!sign);
-
-    // console.log(metrix);
   }
   return (
     <>
@@ -74,6 +49,23 @@ function App() {
           );
         })}
       </div>
+
+      {/* for usestate function  */}
+      <Counter />
+      <br></br>
+
+      {/* use of useEffect */}
+      <div>
+        <label>UserId : </label>
+        <input
+          type="number"
+          onChange={(e) => {
+            setUserId(e.target.value);
+          }}
+        ></input>
+      </div>
+
+      <UserProfile userId={userId} />
     </>
   );
 }
