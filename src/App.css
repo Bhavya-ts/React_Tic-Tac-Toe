@@ -1,38 +1,75 @@
-.App {
+/* .App {
+  text-align: center;
+}
+input[type="text" i] {
+  padding-block: 1px;
+  padding-inline: 2px;
+}
+.inputText {
+    border: 1px solid #ccd0d5;
+    border-radius: 0;
+    margin: 0;
+    padding: 3px;
+} */
+.outer {
+  width: 300px;
+  height: 300px;
+  background-color: lightblue;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.signup-form h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nameOfPerson input {
+  width: 180px;
+  margin: 2px;
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+div{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  display: flex;
+}
+.emailOrphone input{
+  width: 373px;
+}
+.signup-form p {
+  text-align: center;
+  color: #666;
+}
+.password input{
+  width: 373px;
+}
+.Date select{
+  width: 70px;
+  margin: 3px;
+}
+.signup-form div {
+  margin-bottom: 10px;
+}
+.inner {
+  width: 150px;
+  height: 150px;
+  background-color: lightcoral;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label {
+  text-align: center;
+  color: black;
 }
