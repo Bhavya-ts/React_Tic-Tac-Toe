@@ -2,6 +2,7 @@ import userEvent from "@testing-library/user-event";
 import React, { useState } from "react";
 import Counter from "./counte";
 import UserProfile from "./UserProfile";
+import ListItem from "./ListItem";
 function App() {
   const value = "-";
   const [userId, setUserId] = useState(0);
@@ -66,6 +67,8 @@ function App() {
       </div>
 
       <UserProfile userId={userId} />
+
+      <ListItem />
     </>
   );
 }
